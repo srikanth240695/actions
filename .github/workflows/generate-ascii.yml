@@ -8,11 +8,13 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-          - name: Checkout
-            uses: actions/checkout@v4
+        - name: Checkout
+          uses: actions/checkout@v4
           
-          - name: List Repo files
-            run: ls -ltra
+        - name: List Repo files
+          run: ls -ltra
 
-          - name: Execute shell script
-            run: ./ascii-script.sh
+        - name: Execute shell script
+          run: |
+            chmod +x ascii-script.sh
+            ./ascii-script.sh
