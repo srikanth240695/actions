@@ -25,7 +25,7 @@ jobs:
 
     steps:
     - name: sleep for 10 seconds 
-      uses: sleep 10
+      run: sleep 10
     
     - name: Test file exists
       run: grep -i "dragon" dragon.txt
@@ -35,4 +35,4 @@ jobs:
 
     steps:
     - name: Read file
-      uses: cat dragon.txt
+      run: cat dragon.txt
