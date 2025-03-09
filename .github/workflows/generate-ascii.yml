@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-
+      
     - name: Install cowsay program
       run: sudo apt-get install cowsay -y
 
@@ -20,19 +20,19 @@ jobs:
     - name: sleep for 30 seconds
       run: sleep 30
   
-  # test-job-2:
-  #   runs-on: ubuntu-latest
+  test-job-2:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - name: sleep for 10 seconds 
-  #     uses: sleep 10
+    steps:
+    - name: sleep for 10 seconds 
+      uses: sleep 10
     
-  #   - name: Test file exists
-  #     uses: grep -i "dragon" dragon.txt
+    - name: Test file exists
+      run: grep -i "dragon" dragon.txt
   
-  # deploy-job-3:
-  #   runs-on: ubuntu-latest
+  deploy-job-3:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - name: Read file
-  #     uses: cat dragon.txt
+    steps:
+    - name: Read file
+      uses: cat dragon.txt
