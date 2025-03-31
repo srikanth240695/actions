@@ -1,0 +1,17 @@
+name: Vault Demo
+on:
+ workflow_dispatch:
+
+jobs:
+  echo-vault-secret:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Testing Secrets
+      run: |
+        if [[ -z "${{ secrets.AWS_API_KEY }}" ]]; then
+           echo "secret Not found"
+           exit 1
+        else
+          echo "Secret Found"
+          exit 0
+        fi
